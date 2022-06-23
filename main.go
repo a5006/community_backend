@@ -10,7 +10,7 @@ func main() {
 	r := gin.Default()
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
-			"message": "test",
+			"message": "响应值",
 			"version": os.Getenv("VERSION"),
 		})
 	})
