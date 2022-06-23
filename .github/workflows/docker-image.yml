@@ -15,6 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag godemo:$(date +%s)
+      run: docker build -t godemo:latest
     - name: list docker image
       run: docker image ls
+    - name: docker login
+      run: docker login 106.52.82.90 -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+    - name: push to docker 
+      run: docker image push http://106.52.82.90/library/godemo:latest
