@@ -19,6 +19,7 @@ jobs:
 #     - name: list docker image
 #       run: docker image ls
     - name: docker login
+      uses: risfeng/docker-image-build-push-action@v1.0
       with:
           registry_url: 'http://106.52.82.90'
 #           namespaces: 'adotcode'
