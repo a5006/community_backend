@@ -19,7 +19,15 @@ jobs:
 #     - name: list docker image
 #       run: docker image ls
     - name: docker login
-      run: docker login http://106.52.82.90 
+      with:
+          registry_url: 'http://106.52.82.90'
+#           namespaces: 'adotcode'
+#           repository_name: 'adc.ms.eureka.usa'
+          user_name: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          image_version: 'v1.0'
+          docker_file: '.'
+#       run: docker login http://106.52.82.90 
 #       -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
 #     - name: push to docker 
 #       run: docker image push http://106.52.82.90/library/godemo:latest
