@@ -27,5 +27,5 @@ jobs:
           repository_name: 'c_backend'
           user_name: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          image_version: 'v1.0'
+          image_version: 'latest'
           docker_file: '.'
